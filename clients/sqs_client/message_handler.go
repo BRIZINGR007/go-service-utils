@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"sync"
 
-	"github.com/BRIZINGR007/app-002-code-assistant/service-utils/structs"
+	"github.com/BRIZINGR007/go-service-utils/structs"
 	"github.com/aws/aws-sdk-go-v2/service/sqs/types"
 )
 
