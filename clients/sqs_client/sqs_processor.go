@@ -23,14 +23,12 @@ func initSQSClient() (*sqs.Client, error) {
 	if region == "" {
 		region = "us-east-1"
 	}
-
-	// Create the AWS configuration
 	cfg, err := config.LoadDefaultConfig(context.TODO(),
 		config.WithRegion(region),
 		config.WithCredentialsProvider(credentials.NewStaticCredentialsProvider(
 			accessKey,
 			secretKey,
-			"", // Session token (optional, leave empty for regular API keys)
+			"",
 		)),
 	)
 	if err != nil {

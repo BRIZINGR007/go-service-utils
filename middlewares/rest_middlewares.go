@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/BRIZINGR007/go-service-utils/contextvars"
-	"github.com/BRIZINGR007/go-service-utils/utils"
+	helpers "github.com/BRIZINGR007/go-service-utils/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 )
@@ -28,7 +28,7 @@ func RestMiddleware(context *gin.Context) {
 		context.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"messsage": "Not Authorized"})
 		return
 	}
-	claims, err := utils.VerifyToken(token)
+	claims, err := helpers.VerifyToken(token)
 	if err != nil {
 		context.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"message": "Not Authorized"})
 		return
