@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/BRIZINGR007/go-service-utils/contextvars"
-	helpers "github.com/BRIZINGR007/go-service-utils/utils"
+	"github.com/BRIZINGR007/go-service-utils/helpers"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 )
