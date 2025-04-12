@@ -1,4 +1,4 @@
-package utils
+package bedrock_client
 
 import (
 	"context"
