@@ -16,7 +16,7 @@ type SQSProcessor struct {
 	QueueURL string
 }
 
-func initSQSClient() (*sqs.Client, error) {
+func InitSQSClient() (*sqs.Client, error) {
 	accessKey := os.Getenv("AWS_ACCESS_KEY_ID")
 	secretKey := os.Getenv("AWS_SECRET_ACCESS_KEY")
 	region := os.Getenv("AWS_REGION")
@@ -78,10 +78,10 @@ func pollMessagesSQS(queueURL string, client *sqs.Client) {
 	}
 }
 func (p *SQSProcessor) StartPolling() {
-	client, err := initSQSClient()
-	pollMessagesSQS(p.QueueURL, client)
+	client, err := InitSQSClient()
 	if err != nil {
 		log.Fatalf("Failed to initialize SQS client: %v", err)
 	}
+	pollMessagesSQS(p.QueueURL, client)
 
 }
